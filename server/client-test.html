@@ -1,0 +1,10 @@
+<script src="http://localhost:8080/socket.io/socket.io.js"></script>
+<script>
+  var num_pushups = 0;
+  var socket = io.connect('http://localhost:8080');
+  socket.on('pushup', function (data) {
+  	num_pushups++;
+    console.log(data);
+    console.log("Total Pushups Done: " + num_pushups);
+  });
+</script>

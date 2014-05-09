@@ -8,6 +8,9 @@
 
 #import "BUFViewController.h"
 #import <AFNetworking/AFNetworking.h>
+
+#define SERVER_URL @"http://192.168.1.55:8080"
+
 @interface BUFViewController ()
 
 @end
@@ -21,7 +24,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"foo": @"bar"};
     
-    [manager POST:@"http://www.google.com/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:SERVER_URL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
