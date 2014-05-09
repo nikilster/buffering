@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Buffering",
+  "description": "Buff while you buffer",
+  "version": "1.0",
+    "content_scripts": [
+      {
+        "matches": ["https://*/*", "http://*/*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+  "permissions":[
+        "https://*.youtube.com/*",
+        "https://*.facebook.com/*"
+      ]
+}
