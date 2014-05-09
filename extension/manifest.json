@@ -7,7 +7,8 @@
     "content_scripts": [
       {
         "matches": ["https://*/*", "http://*/*"],
-        "js": ["content.js"],
+        "js": ["socket.io.js",
+               "content.js"],
         "run_at": "document_end"
       }
     ],
